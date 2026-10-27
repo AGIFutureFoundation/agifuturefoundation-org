@@ -31,6 +31,13 @@ The Foundation itself carries the hub variant with the GitHub link.
 ## Subdomain architecture
 `<name>.agifuturefoundation.org` — `.x` companies under a `*.x` wildcard;
 project subdomains explicit. All point to `cname.vercel-dns.com`.
+### RP1 metaverse ecosystem (reserved homes)
+`sneeze` (open browser engine, Apache 2.0), `rubidium` (open metaverse browser),
+`artemis` (RP1's native metaverse browser), `vrs` (Universal Map — 1:1 Earth),
+`rmap` (Remote Model Access Protocol), `statabase` (planetary-scale database),
+`ombi` (Open Metaverse Browser Initiative — omb.wiki).
+RP1 is by Metaversal / 8-P; standards via the Metaverse Standards Forum.
+
 
 ## Agentic infrastructure (shared)
 - **Mail**: catch-all on family domains; Email API tokens (api.mail.hostinger.com)
