@@ -37,13 +37,28 @@
     });
   });
 
-  /* ---- Contact form ----
-     TODO: wire this to your backend / Formspree / Vercel function.
-     For now it validates and shows an acknowledgement message. */
-  var form = document.getElementById("contactForm");
+  /* ---- Invest form (static hosting) ----
+     No backend on GitHub Pages: submissions are composed into an email
+     to the Foundation team via the visitor's mail client. */
+  var form = document.getElementById("investForm") || document.getElementById("contactForm");
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+      var data = {};
+      new FormData(form).forEach(function (v, k) { data[k] = v; });
+      var subject = "Investment inquiry — " + (data.interest || data.topic || "AGI Future Foundation");
+      var lines = [
+        "Name: " + (data.name || "-"),
+        "Email: " + (data.email || "-"),
+        "Organization: " + (data.organization || "-"),
+        "Interest: " + (data.interest || data.topic || "-"),
+        "",
+        (data.message || "").trim()
+      ].join("\n");
+      var mailto = "mailto:invest@agifuturefoundation.org" +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(lines + "\n");
+      window.location.href = mailto;
       var note = document.getElementById("formNote");
       if (note) note.hidden = false;
       form.reset();
@@ -60,7 +75,7 @@
         }
       });
     }, { threshold: 0.08 });
-    document.querySelectorAll(".card, .tier, .embed-card, .article-row").forEach(function (el) {
+    document.querySelectorAll(".card, .tier, .embed-card, .article-row, .article-card, .video-card").forEach(function (el) {
       el.style.opacity = "0";
       el.style.transition = "opacity 0.6s ease, transform 0.6s ease";
       io.observe(el);

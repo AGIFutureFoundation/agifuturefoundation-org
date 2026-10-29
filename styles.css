@@ -10,6 +10,7 @@
   --text-muted: #9aa4b5;
   --danger: #ff6b6b;
   --success: #2ecc8f;
+  --gold: #e0b13a;
   --radius: 14px;
   --maxw: 1100px;
 }
@@ -32,6 +33,7 @@ a { color: var(--accent); text-decoration: none; }
 }
 .nav { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; }
 .brand { font-weight: 700; color: var(--text); font-size: 1.05rem; letter-spacing: 0.01em; }
+.brand .mark { color: var(--accent); margin-right: 6px; }
 .nav-links { display: flex; align-items: center; gap: 26px; list-style: none; }
 .nav-links a { color: var(--text-muted); font-size: 0.95rem; transition: color 0.2s; }
 .nav-links a:hover { color: var(--text); }
@@ -113,6 +115,7 @@ a { color: var(--accent); text-decoration: none; }
   padding: 6px 14px; border-radius: 999px; font-size: 0.82rem; font-weight: 600;
 }
 .invest-badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 32px; }
+
 /* ---- Articles ---- */
 .article-list { display: grid; gap: 12px; }
 .article-row {
@@ -126,23 +129,36 @@ a { color: var(--accent); text-decoration: none; }
 .article-title { font-size: 0.98rem; font-weight: 600; }
 .article-cta { color: var(--text-muted); font-size: 0.85rem; white-space: nowrap; }
 
-/* ---- Embeds (lazy YouTube etc.) ---- */
-.embed-card {
+/* Article cards with hero images (hub) */
+.cards-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.article-card {
+  display: block; background: var(--panel); border: 1px solid var(--border);
+  border-radius: var(--radius); overflow: hidden; color: var(--text);
+  transition: border-color 0.2s, transform 0.15s;
+}
+.article-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+.article-thumb { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; display: block; }
+.article-card-body { padding: 18px 22px 22px; }
+.article-meta { color: var(--text-muted); font-size: 0.8rem; margin-bottom: 8px; }
+.article-meta .article-cat { margin-right: 6px; }
+.article-card h3 { font-size: 1.02rem; line-height: 1.35; margin-bottom: 8px; }
+.article-card p { color: var(--text-muted); font-size: 0.9rem; }
+.article-card .read-more { color: var(--accent); font-size: 0.88rem; font-weight: 600; }
+
+/* ---- Video explainers ---- */
+.video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.video-card {
   background: var(--panel); border: 1px solid var(--border);
   border-radius: var(--radius); overflow: hidden;
 }
-.embed-facade {
-  aspect-ratio: 16 / 9; display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 10px; cursor: pointer;
-  background: linear-gradient(135deg, var(--bg-alt), var(--panel));
-}
-.embed-play {
-  width: 56px; height: 56px; border-radius: 50%;
-  background: var(--accent); color: #fff;
-  display: grid; place-items: center; font-size: 1.3rem;
-}
-.embed-facade p { color: var(--text-muted); font-weight: 600; padding: 0 16px; text-align: center; }
-.embed-card iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; display: block; }
+.video-card video { width: 100%; aspect-ratio: 16 / 9; display: block; background: #000; }
+.video-card-body { padding: 16px 20px 20px; }
+.video-card h3 { font-size: 1rem; margin-bottom: 6px; }
+.video-card p { color: var(--text-muted); font-size: 0.9rem; }
+
+/* ---- Ventures (family) ---- */
+.venture-card { display: flex; flex-direction: column; gap: 8px; }
+.venture-card .venture-links { margin-top: auto; padding-top: 14px; display: flex; gap: 14px; flex-wrap: wrap; font-size: 0.9rem; }
 
 /* ---- Forms ---- */
 .contact-form { display: grid; gap: 18px; max-width: 640px; }
@@ -156,6 +172,40 @@ a { color: var(--accent); text-decoration: none; }
   outline: 2px solid var(--accent); outline-offset: 1px; border-color: var(--accent);
 }
 .form-note { color: var(--success); font-size: 0.92rem; }
+
+/* ---- Article page ---- */
+.art-hero-band { padding: 64px 0 40px; border-bottom: 1px solid var(--border);
+  background: radial-gradient(900px 400px at 30% -10%, var(--accent-soft), transparent), var(--bg); }
+.art-back { color: var(--text-muted); font-size: 0.9rem; display: inline-block; margin-bottom: 20px; }
+.art-back:hover { color: var(--accent); }
+.art-tag { color: var(--accent); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; }
+.art-hero-band h1 { font-size: clamp(1.7rem, 4vw, 2.5rem); line-height: 1.2; margin: 12px 0 16px; max-width: 860px; }
+.art-lede { color: var(--text-muted); font-size: 1.12rem; max-width: 780px; }
+.art-hero-img { width: 100%; border-radius: var(--radius); border: 1px solid var(--border); margin: 36px 0 0; display: block; }
+.art-body { padding: 48px 0 64px; }
+.art-body .art-col { max-width: 780px; }
+.art-body h2 { font-size: 1.45rem; line-height: 1.3; margin: 44px 0 14px; }
+.art-body h3 { font-size: 1.12rem; margin: 28px 0 10px; color: var(--accent); }
+.art-body p { color: var(--text-muted); margin-bottom: 16px; font-size: 1.02rem; }
+.art-body blockquote {
+  border-left: 3px solid var(--accent); padding: 6px 0 6px 18px; margin: 20px 0;
+  color: var(--text); font-size: 1.05rem;
+}
+.art-body ul, .art-body ol { padding-left: 22px; color: var(--text-muted); margin-bottom: 16px; display: grid; gap: 8px; }
+.art-video-wrap { margin: 44px 0; }
+.art-video-wrap video { width: 100%; aspect-ratio: 16 / 9; border-radius: var(--radius); border: 1px solid var(--border); background: #000; display: block; }
+.art-cta-band { border-block: 1px solid var(--border); background: var(--bg-alt); padding: 48px 0; text-align: center; }
+.art-cta-band p { color: var(--text-muted); margin-bottom: 18px; }
+.art-related { padding: 56px 0 72px; }
+.art-related-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.art-related-card {
+  display: block; background: var(--panel); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px 22px; color: var(--text);
+  transition: border-color 0.2s;
+}
+.art-related-card:hover { border-color: var(--accent); }
+.art-related-card .article-cat { display: block; margin-bottom: 8px; }
+.art-related-card h4 { font-size: 0.98rem; line-height: 1.4; font-weight: 600; }
 
 /* ---- Footer ---- */
 .site-footer { background: var(--bg-alt); border-top: 1px solid var(--border); padding: 56px 0 32px; }
@@ -180,6 +230,7 @@ a { color: var(--accent); text-decoration: none; }
   .split { grid-template-columns: 1fr; }
   .article-row { grid-template-columns: 1fr; gap: 6px; }
   .article-cta { display: none; }
+  .cards-grid, .video-grid, .art-related-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 720px) {
   .nav-toggle { display: block; }

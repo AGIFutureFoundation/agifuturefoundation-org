@@ -2,40 +2,40 @@
 
 Static website for **AGI Future Foundation PBC** — Architecting Global AGI Prosperity.
 
-Content migrated from the previous Hostinger-hosted site (problem/solution framework,
-architecture, articles index, video explainers, and invest form).
+Full rebuild of the Kylon app (https://agi-future-foundation.kylon.app) as a static
+site: problem/solution framework, three-tier architecture, the venture family,
+fifteen diligence-grade articles (content 1:1), eight self-hosted video explainers,
+and the invest form — in the unified AGIF family design (`BRAND.md`).
 
 ## Stack
 - Pure HTML + CSS + JS — no build step
-- Deploy-ready for Vercel (auto-detected as a static project)
+- Served by **GitHub Pages** (branch `main`, path `/`), custom domain `www.agifuturefoundation.org`
 
-## Deploy to Vercel
-```bash
-vercel          # first deploy
-vercel --prod   # promote to production
-```
-Then in the Vercel dashboard add the custom domain `agifuturefoundation.org`
-(Settings → Domains). DNS is managed at Hostinger — when the deployment is live,
-the apex `A` record should point to `76.76.21.21` and `www` to `cname.vercel-dns.com`.
+## Structure
+- `index.html` — the hub (all sections + venture family + invest form)
+- `articles/<slug>/index.html` — the 15 deep dives
+- `heroes/`, `posters/`, `videos/` — media mirrored from the Kylon app
+  (8 homepage explainers + 7 article-embedded films, all self-hosted MP4)
+- `styles.css` / `script.js` — shared family design (accent `#4f8cff`)
+- `CNAME` — `www.agifuturefoundation.org`
+
+## Notes
+- The invest form composes an email to `invest@agifuturefoundation.org` via the
+  visitor's mail client (no backend on static hosting).
+- The seven articles whose source ledes carried a raw `**SEO meta description:**`
+  placeholder now use clean, complete descriptions; the leftover note paragraphs
+  were removed from the bodies. All other content is 1:1 with the Kylon app.
 
 ## Subdomain architecture
 
-Each venture has a reserved home, all pointing to Vercel (`cname.vercel-dns.com`).
-When a project expands, deploy its repo on Vercel and add the subdomain in the
-project settings — it goes live instantly, no DNS changes needed.
+Venture landings live at `<name>.agifuturefoundation.org`, each served by its own
+repo's GitHub Pages, with a CNAME at Hostinger pointing to
+`agifuturefoundation.github.io`:
 
-- `.x` companies: `cognition.x`, `smartciti.x`, `locator.x`, `diagnostic.x` —
-  plus a `*.x` wildcard so any future .X company works automatically
-- Project subdomains: `worldforge`, `metropolis`, `rubidium`, `robotics`,
-  `shield`, `insidr`, `wave`, `trueforge`, `sentinel`, `genomic`,
-  `plaudguard`, `dyva`
+- `.x` companies: `cognition.x`, `smartciti.x`
+- Ventures: `worldforge`, `biodao`
 
-DNS is managed at Hostinger (apex A record is intentionally still on
-Hostinger until the new Vercel deployment is confirmed live — then flip
-`@` to `76.76.21.21` and `www` to `cname.vercel-dns.com`).
-
-## TODO
-- [ ] Wire the contact/invest form to a backend (Formspree, Vercel Function, etc.)
-- [ ] Fill in `data-youtube-id` attributes on the eight explainer embeds
-- [ ] Replace `#` placeholders in the footer social links with real profile URLs
-- [ ] Add full article pages as they are written
+Apex DNS is managed at Hostinger; the apex `A` records should point to GitHub
+Pages (`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`)
+so the apex serves/redirects to `www`, and `www` stays a CNAME to
+`agifuturefoundation.github.io`.
