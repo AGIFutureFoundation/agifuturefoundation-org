@@ -1,0 +1,22 @@
+{
+  "updated": "2026-10-27",
+  "note": "Central social-links config for the whole AGIF family. Edit this file in the agifuturefoundation-org repo and every site updates its .social-links block on next visit. Entries with an empty url are hidden until you fill them.",
+  "links": [
+    { "label": "GitHub", "url": "https://github.com/AGIFutureFoundation" },
+    { "label": "Email", "url": "mailto:x@agifuturefoundation.org" },
+    { "label": "X", "url": "" },
+    { "label": "LinkedIn", "url": "" },
+    { "label": "YouTube", "url": "" },
+    { "label": "Discord", "url": "" },
+    { "label": "Instagram", "url": "" }
+  ],
+  "sites": {
+    "bioacoustics.cloud": [
+      { "label": "GitHub", "url": "https://github.com/WAVETranslator" },
+      { "label": "Email", "url": "mailto:wave@bioacoustics.cloud" },
+      { "label": "X", "url": "" },
+      { "label": "YouTube", "url": "" },
+      { "label": "Discord", "url": "" }
+    ]
+  }
+}
