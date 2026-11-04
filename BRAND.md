@@ -22,6 +22,25 @@ ecosystem shares the same skeleton, so a visitor always knows where they are.
 | mentib.us | `#8b5cf6` | Mentib violet |
 | perilux.pro | `#f59e0b` | Perilux amber |
 | fellowship.chat | `#10b981` | Fellowship chat green |
+| robotics | `#f97316` | Venture home accent |
+| diagnosticx | `#22d3ee` | Venture home accent |
+| metropolis | `#a78bfa` | Venture home accent |
+| insidr | `#94a3b8` | Venture home accent |
+| shield | `#fbbf24` | Venture home accent |
+| locatorx | `#34d399` | Venture home accent |
+| trueforge | `#f472b6` | Venture home accent |
+| sentinel | `#ef4444` | Venture home accent |
+| genomic | `#4ade80` | Venture home accent |
+| plaudguard | `#60a5fa` | Venture home accent |
+| dyva | `#c084fc` | Venture home accent |
+| wave | `#0ea5e9` | Venture home accent |
+| sneeze | `#7dd3fc` | Venture home accent |
+| rubidium | `#a5b4fc` | Venture home accent |
+| artemis | `#f0abfc` | Venture home accent |
+| vrs | `#5eead4` | Venture home accent |
+| rmap | `#fdba74` | Venture home accent |
+| statabase | `#fca5a5` | Venture home accent |
+| ombi | `#d8b4fe` | Venture home accent |
 
 ## The family bar (unified footer)
 Every site carries a `family-bar` above its footer bottom line:
@@ -36,16 +55,20 @@ kebab-case, **no dot forms** (`cognitionx`, not `cognition.x`; `locatorx`,
 (GitHub Pages — not Vercel). The full registry lives on the hub
 (`#subdomains`): 24 named subdomains across 33 series slots.
 
-### Registry (status: LIVE = serving · REPO = has repo · RESERVED = future home)
-- **LIVE**: `www` (hub) · `cognitionx` · `smartcitix` · `biodao` · `worldforge`
-- **REPO**: `robotics` · `diagnosticx` · `metropolis` · `insidr` · `shield` ·
-  `locatorx` · `trueforge` · `sentinel` · `genomic` · `plaudguard` · `dyva` · `wave`
-- **RESERVED (RP1 metaverse ecosystem)**: `sneeze` (open browser engine,
-  Apache 2.0), `rubidium` (open metaverse browser), `artemis` (RP1's native
-  metaverse browser), `vrs` (Universal Map — 1:1 Earth), `rmap` (Remote Model
-  Access Protocol), `statabase` (planetary-scale database), `ombi` (Open
-  Metaverse Browser Initiative — omb.wiki). RP1 is by Metaversal / 8-P;
-  standards via the Metaverse Standards Forum.
+### Registry (all 24 serving — status: LIVE)
+Every named subdomain serves a venture home page (family template, own Pages
+repo `<name>-site`). 9 series slots stay open for future ventures.
+
+- **Core family**: `www` (hub) · `cognitionx` · `smartcitix` · `biodao` · `worldforge`
+- **Ventures in development (12)**: `robotics` · `diagnosticx` · `metropolis` ·
+  `insidr` · `shield` · `locatorx` · `trueforge` · `sentinel` · `genomic` ·
+  `plaudguard` · `dyva` · `wave`
+- **RP1 metaverse ecosystem (7, reserved homes)**: `sneeze` (open browser engine,
+  Apache 2.0) · `rubidium` (open metaverse browser) · `artemis` (RP1's native
+  browser) · `vrs` (Universal Map — 1:1 Earth) · `rmap` (Remote Model Access
+  Protocol) · `statabase` (planetary-scale database) · `ombi` (Open Metaverse
+  Browser Initiative — omb.wiki). RP1 is by Metaversal / 8-P; standards via the
+  Metaverse Standards Forum.
 
 New ventures: pick a kebab-case name, claim the subdomain in the hub
 registry table, point its CNAME at `agifuturefoundation.github.io`.
