@@ -11,6 +11,16 @@
     { "label": "Instagram", "url": "" }
   ],
   "sites": {
+    "www.agifuturefoundation.org": [
+      { "label": "GitHub", "url": "https://github.com/AGIFutureFoundation" },
+      { "label": "Email", "url": "mailto:invest@agifuturefoundation.org" },
+      { "label": "Kylon app ↗", "url": "https://agi-future-foundation.kylon.app" }
+    ],
+    "agifuturefoundation.org": [
+      { "label": "GitHub", "url": "https://github.com/AGIFutureFoundation" },
+      { "label": "Email", "url": "mailto:invest@agifuturefoundation.org" },
+      { "label": "Kylon app ↗", "url": "https://agi-future-foundation.kylon.app" }
+    ],
     "bioacoustics.cloud": [
       { "label": "GitHub", "url": "https://github.com/WAVETranslator" },
       { "label": "Email", "url": "mailto:wave@bioacoustics.cloud" },
